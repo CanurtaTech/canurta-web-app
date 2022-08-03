@@ -1,3 +1,17 @@
-h1 {
-    color: aqua;
+body {
+    background-color: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.C1 {
+    background-color: #007bff;
+}
+
+.C2 {
+    background-color: yellow;
+    margin-top: 0;
 }
