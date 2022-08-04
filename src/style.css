@@ -1,7 +1,74 @@
 body {
     background-color: #f4f9f0;
+    font-family: Arial, sans-serif;
+}
+
+.web-app {
     font-family: Mulish, Helvetica, Roboto, Arial, sans-serif;
     font-style: normal;
     font-weight: 600;
     color: #36485c;
+}
+
+.heading {
+    margin-top: 0;
+    top: 0;
+}
+
+.heading1 {
+    color: #36485c;
+    font-size: 50px;
+    font-weight: 100;
+    line-height: 28.8px;
+    margin-top: 0;
+    margin: 0;
+}
+
+.sign {
+    position: right;
+}
+
+.dropdown-margin {
+    margin-bottom: 20px;
+}
+
+.C1 {
+    border: 20px;
+    border: solid;
+    padding: 2px;
+    font-size: small;
+    font-weight: 100;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+}
+
+.C2 {
+    border: 20px;
+    border: solid;
+    padding: 2px;
+    font-size: small;
+    font-weight: 100;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+}
+
+.C3 {
+    border: 20px;
+    border: solid;
+    padding: 2px;
+    font-size: small;
+    font-weight: 100;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+}
+
+.Div {
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
 }
