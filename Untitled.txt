@@ -1,0 +1,370 @@
+###side bar line 41 app.py
+def app():
+    st.title('Data')
+    lang = pd.read_excel('Book1.xlsx')
+
+    with st.expander(" Choose your filters"):
+      list= lang.columns[1:8].tolist()
+      choice= st.multiselect("Pick your biomarker", list, list[:3])
+      start = st.date_input("Start", value=pd.to_datetime("2022-01-01"))
+      end = st.date_input("End", value=pd.to_datetime("2022-03-31"))
+
+    data=lang[choice]
+    st.text("A close look into the data")
+    st.line_chart(data)
+    
+    if st.button("Share results with your doctor"):
+        js = "window.open('https://www.canurta.com/')"
+        html = '<img src onerror="{}">'.format(js)
+        div = Div(text=html)
+        st.bokeh_chart(div)
+
+
+###lottie_coding = load_lottieurl("https://assets7.lottiefiles.com/packages/lf20_l13zwx3i.json")
+###HELIA
+import streamlit as st
+from bokeh.models.widgets import Div
+
+header = st.container()
+user_input = st.container()
+share_results = st.container()
+def app():
+  with header:
+    st.title("My Profile")
+
+  with user_input:
+    mood_slider = st.slider("Daily Mood Tracker", min_value=0, max_value=10, value=5, step=1)
+    pain_slider = st.slider("Daily Pain Tracker", min_value=0, max_value=10, value=5, step=1)
+
+  with share_results: 
+    st.subheader("Share My Results")
+    text_col, image_col = st.columns(2)
+    image_col.image("share_symbol.png")
+    st.button("Send Report to My Doctor")
+
+
+"trail","crp","il6","tgfb","tgfa","il8","ip10","rhr","calories","sleep","skin_temp"	 
+
+
+
+##########BUTTON########
+
+if st.button("Connect to Fullscript"):
+        js = "window.open('https://fullscript.com/')"
+        html = '<img src onerror="{}">'.format(js)
+        div = Div(text=html)
+        st.bokeh_chart(div)
+
+########Requirements
+
+
+
+###
+import matplotlib.pyplot as plt
+
+    
+    lang = pd.read_excel('canurta_data.xlsx')
+    data=lang[""]
+
+    
+    def plot_diagnostics(self):
+      for target in data:
+        plt.figure()
+        plt.plot(self.lang["historic_dates"], self.df[target]["historic_raw"],"o")
+    
+
+    return plot_diagnostics()
+#########ГАУХАР########
+def app():
+    a2, a3 = st.columns(2)
+    with a2:
+     st.title('Data')
+    with a3:
+     button= st.button("Share results with your doctor")
+     if button:
+        js = "window.open('https://www.canurta.com/')"
+        html = '<img src onerror="{}">'.format(js)
+        div = Div(text=html)
+        st.bokeh_chart(div)
+
+
+
+    lang = pd.read_excel('Book1.xlsx')
+
+  
+    list= lang.columns[1:8].tolist()
+    choice= list
+    groupby_column2 = st.multiselect(
+        'What would you like to analyse?',
+        ('trail', 'crp', 'il6', "tgfb",	"tgfa",	"il8","ip10")
+    )
+    data=lang[choice]
+    st.text("A close look into the data")
+     
+
+    fig2 = px.line(
+        data,
+        x=lang['date'],
+        y=groupby_column2)
+    fig2.update_xaxes(title_text='Date')
+
+    st.plotly_chart(fig2,use_container_width=True)
+
+    ######side bar
+     with st.sidebar:
+            
+             st.image("images/background.png", width=50, )
+             with st.form(key="daily_tracker"):
+                mood_slider = st.slider("Daily Mood Tracker", min_value=0, max_value=10, value=5, step=1)
+                pain_slider = st.slider("Daily Pain Tracker", min_value=0, max_value=10, value=5, step=1)
+                submit = st.form_submit_button(label="Submit")
+
+
+
+
+
+    def load_lottiefile(filepath: str):
+    with open(filepath, "r") as f:
+     return json.load(f)
+lottie_coding = load_lottiefile("images/lottie.json")
+
+
+
+MULTIPAGE:
+"""Frameworks for running multiple Streamlit applications as a single app.
+"""
+from __future__ import with_statement
+from tkinter import HIDDEN
+from turtle import color, width
+import streamlit as st
+from streamlit_lottie import st_lottie
+import requests 
+import json
+from streamlit_option_menu import option_menu
+
+
+#######STYLE CSS#######
+hide_menu= """
+<style>
+#MainMenu {
+     visibility: hidden;
+}
+#div.css-qri22k.egzxvld4 {
+     visibility: hidden;
+}
+<style>
+"""
+side_bar="""
+<style>
+#stHorizontalBlock{
+     background-color: #023334;
+}
+<style>
+"""
+dashboard="""
+<style>
+#dashboard{
+     position:relative; 
+     
+     top:-100px
+}
+<style>
+"""
+class MultiApp:
+    """Framework for combining multiple streamlit applications.
+    Usage:
+        def foo():
+            st.title("Hello Foo")
+        def bar():
+            st.title("Hello Bar")
+        app = MultiApp()
+        app.add_app("Foo", foo)
+        app.add_app("Bar", bar)
+        app.run()
+    It is also possible keep each application in a separate file.
+        import foo
+        import bar
+        app = MultiApp()
+        app.add_app("Foo", foo.app)
+        app.add_app("Bar", bar.app)
+        app.run()
+    """
+    st.set_page_config(layout="wide")
+    def __init__(self):
+        self.apps = []
+        
+        
+
+    def add_app(self, title, func):
+        """Adds a new application.
+        Parameters
+        ----------
+        func:
+            the python function to render this app.
+        title:
+            title of the app. Appears in the dropdown in the sidebar.
+        """
+        
+        self.apps.append({
+            "title": title,
+            "function": func
+        })
+        #################
+
+       
+
+
+    def run(self):
+       
+
+        st.sidebar.image("images/canurta_logo.png", use_column_width=True, width=100)
+        st.markdown(hide_menu, unsafe_allow_html= True)
+        st.markdown(side_bar, unsafe_allow_html= True)
+        st.markdown(dashboard, unsafe_allow_html= True)
+
+        
+
+        app = st.sidebar.radio(
+         
+             '',
+       
+            self.apps,
+            format_func=lambda app: app['title'],
+            )
+        if app:
+             with st.sidebar:
+               selected = option_menu(
+                menu_title= None,
+                options=["Home", "Data",  "Profile"], 
+                default_index=0,
+                styles={
+            "container": {"padding": "0!important", "background-color": "#fafafa"},
+            "icon": {"visibility":"hidden"}, 
+            "nav-link": {"margin":"","padding":"12px 0px;", "min-height":"30px", "min-width": "150px","font-size": "20px", "color":"#ffffff","border-radius":"0px","border":"5px","border-color":"#054747","background-color": "#023334;","text-align": "left", "margin":"0px",  "font-family":"wf_282b04cad22942a295c9c48f5 - 400"},
+            "nav-link-selected": {"background-color": "#02292A","color":"ffffff"},
+        }
+            )
+        if selected ==" Home":
+                st.title("{selected}")
+        if selected ==" Data":
+                st.title("{selected}")
+        if selected ==" Profile":
+                st.title("{selected}")
+
+
+        
+        
+
+        app['function']()
+
+
+
+
+###########HOME PAGE:
+from cProfile import label
+from curses import keyname
+from email.mime import image
+from tarfile import PAX_FIELDS
+from turtle import color, width
+import requests
+import numpy as np
+import streamlit as st
+from streamlit_lottie import st_lottie
+import pandas as pd
+from matplotlib import pyplot as plt
+import plost
+import seaborn as sns
+from streamlit_option_menu import option_menu
+from multiapp import MultiApp
+from bokeh.models.widgets import Div
+from apps import home, data, model
+import json
+import json
+
+
+import streamlit as st
+
+st.markdown("Main")
+st.sidebar.markdown("Main")
+
+
+#STYLE
+hide_menu= """
+<style>
+#MainMenu{
+     visiibity:hidden;
+}
+<style>
+"""
+side_bar="""
+<style>
+div.st-bz.st-cd.st-ce.st-ae.st-af.st-ag.st-ah.st-ai.st-aj{
+     font-family: Helvetica, Arial, sans-serif;
+     list-style: none
+}
+<style>
+"""
+#ICON
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+# Page setting
+
+with open('src/style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+ 
+# Data
+df= pd.read_csv('https://raw.githubusercontent.com/goga0001/canurta/main/Untitled%20spreadsheet%20-%20Sheet1.csv')
+
+#load assets=add empty space
+def space(num_lines=1):
+    """Adds empty lines to the Streamlit app."""
+    for _ in range(num_lines):
+        st.write("")
+# ---- HEADER SECTION ----
+#heading
+
+    
+    
+    c1, c2 = st.columns((4,1))
+    with c1:
+       
+       st.title("Dashboard")
+       
+       
+    
+       with c2:
+        space(1)
+
+    
+
+
+    space(1)
+    space(1)
+    space(1)
+    space(1)
+    from PIL import Image
+    a1, a2, a3, a4= st.columns(4)
+    a1.metric("Dose Recomendation: ", "2 pills")
+    a2.metric("Avg Inflammation \n Score","20%")
+    a3.metric("Avg Pain Score", "8%")
+    a4.metric("Avg mood score", "11%")
+
+    space(1)
+    st.subheader("Product Recomendations")
+    space(1)
+    space(1)
+    b1, b2= st.columns(2)
+    with b1:
+       st.image("images/canurta1.png", use_column_width=True)
+       button=st.button("Get your product here")
+       button
+      
+    with b2:
+       st.image("images/product.png", use_column_width=True)
+       button
+
+       with open('src/style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
