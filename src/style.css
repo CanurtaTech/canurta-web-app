@@ -1,26 +1,4 @@
-/* Centering text in each gray box */
-
-div.css-1ht1j8u.e16fv1kl0 {
-    text-align: center;
-}
-
-div.css-1v3fvcr.egzxvld1 {
-    color: #023334;
-}
-
-
-/* Header */
-
-div.css-10trblm.e16nr0p33 {
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-
 /* columns */
-
-div.ecss-7eizb9.e1tzin5v1 {
-    background-color: #023334;
-}
 
 div.css-12w0qpk.e1tzin5v2 {
     background-color: #E6E6E6;
@@ -36,32 +14,7 @@ div.css-12w0qpk.e1tzin5v2 {
 }
 
 
-/* Text */
-
-div.css-183lzff.eyqtai90 {
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 20px;
-    font-style: bold;
-}
-
-div.css-nlntq9.e16nr0p30 {
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 130px;
-    font: bold;
-}
-
-
 /* BACKGROUND */
-
-div.css-fg4pbf.eczokvf0 {
-    background-color: #E6E6E6
-}
-
-div.css-ocqkz7.e1tzin5v0 {
-    background-color: #E6E6E6;
-    color: black;
-    stop-color: #ffffff;
-}
 
 
 /* SIDEBAR */
