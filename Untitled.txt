@@ -1,3 +1,8 @@
+
+div.css-14xtw13.e8zbici0 {
+    visibility: hidden;
+}
+
 ###side bar line 41 app.py
 def app():
     st.title('Data')

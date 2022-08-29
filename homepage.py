@@ -1,3 +1,4 @@
+from email.policy import default
 import streamlit as st
 from cProfile import label
 from curses import keyname
@@ -29,28 +30,15 @@ cur = conn.cursor()
 
 
 st.set_page_config(
-    page_title="Multipage App",
+    page_title="App",
     page_icon="👋",
+    layout="centered"
 )
 with open('src/style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-#STYLE
 
-hide_menu= """
-<style>
-#MainMenu{
-     visiibity:hidden;
-}
-<style>
-"""
-side_bar="""
-<style>
-div.st-bz.st-cd.st-ce.st-ae.st-af.st-ag.st-ah.st-ai.st-aj{
-     font-family: Helvetica, Arial, sans-serif;
-     list-style: none
-}
-<style>
-"""
+
+
 # Data
 #df= pd.read_csv('https://raw.githubusercontent.com/goga0001/canurta/main/Untitled%20spreadsheet%20-%20Sheet1.csv')
 
@@ -63,27 +51,38 @@ def space(num_lines=1):
 
 
 with st.sidebar:
+    image1 = st.image("images/canurta_logo.png")
+    a1, a2 = st.columns(2)
+    a1.image("images/background.png", width=50)
+    a2.text("Name, Age")
+    mood = st.slider('Daily Pain Tracker', 0, 10, 7)
+    pain = st.slider('Daliy Mood Tracker', 0, 10, 2)
     choose = option_menu("", ["Home", "Data", "Profile"],
                             
                          styles={
-        "container": {"padding": "5!important", "background-color": "#023334"},
+        "container": {"padding": "5!important","position":"relative","top":"50%","height":"400px","width": "400","min-width":"600px", "background-color": "#023334","border-radius":"0px", "width": "700px","margin": "auto"},
+        "icon": {"visibility":"hidden"},
         "nav-link": {"padding":"12px 0px;", "min-height":"30px", "min-width": "150px","font-size": "20px","font-size": "16px","border-radius":"0px","border":"5px","border-color":"#054747", "text-align": "left", "margin":"0px", "--hover-color": "#eee", "color":"white","font-family":"wf_282b04cad22942a295c9c48f5 - 400"},
-        "nav-link-selected": {"background-color": "#02ab21"},
+        "nav-link-selected": {"background-color": "#02292A","color":"ffffff"},
     }
     )
-    
+     
 
 if choose == "Home":
  
     col1, col2 = st.columns( [0.8, 0.2])
     with col1:               # To display the header text using css style
         st.markdown(""" <style> .font {
-        font-size:35px ; font-family: 'wf_282b04cad22942a295c9c48f5 - 400'; color: #FF9633; float:left;margin: auto -90px;} 
+        font-size:45px ; font-family: 'wf_282b04cad22942a295c9c48f5 - 400'; color: black; float:left;margin: auto -90px;} 
         </style> """, unsafe_allow_html=True)
         st.markdown('<p class="font">Home</p>', unsafe_allow_html=True)    
+      
     with col2:               # To display brand log
-        st.image("images/canurta.png", width=130 )
-    
+        st.write("")
+    space(1)
+    space(1)
+    space(1)
+    st.image("images/graph.png",width=900)
     
     a1, a2, a3, a4= st.columns(4)
     a1.metric("Dose Recomendation: ", "2 pills")
@@ -96,7 +95,7 @@ if choose == "Home":
     space(1)
     b1, b2= st.columns(2)
     with b1:
-       st.image("images/canurta1.png", use_column_width=True)
+       st.image("images/canurta1.png")
        button=st.button("Get your product here")
        
       
@@ -106,7 +105,7 @@ if choose == "Home":
 elif choose == "Profile":
 #Add a file uploader to allow users to upload their project plan file
     st.markdown(""" <style> .font {
-    font-size:35px ; font-family: 'wf_282b04cad22942a295c9c48f5 - 400'; color: #FF9633; float:left;margin: auto -90px;} 
+    font-size:45px ; font-family: 'wf_282b04cad22942a295c9c48f5 - 400'; color: black; float:left;margin: auto -90px;} 
     </style> """, unsafe_allow_html=True)
     st.markdown('<p class="font">Your Profile</p>', unsafe_allow_html=True)
     personal_info = st.container()
@@ -145,7 +144,7 @@ elif choose == "Profile":
 
 elif choose == "Data":
     st.markdown(""" <style> .font {
-    font-size:35px ; font-family: 'wf_282b04cad22942a295c9c48f5 - 400'; color: #FF9633; float:left;margin: auto -90px;} 
+    font-size:45px ; font-family: 'wf_282b04cad22942a295c9c48f5 - 400'; color: black; float:left;margin: auto -90px;} 
     </style> """, unsafe_allow_html=True)
     st.markdown('<p class="font">Data</p>', unsafe_allow_html=True)
     def import_json(json_file):
@@ -167,7 +166,7 @@ elif choose == "Data":
         ('trail', 'crp', 'il6', "tgfb",	"tgfa",	"il8","ip10")
     )
     data=df_biomarkers[choice]
-    st.text("A close look into the data")
+    st.text("")
      
 
     fig2 = px.line(

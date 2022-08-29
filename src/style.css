@@ -13,15 +13,51 @@ div.css-12w0qpk.e1tzin5v2 {
     background-clip: border-box;
 }
 
+#div.css-1p1nwyz.e1tzin5v3 {
+    top: -10px;
+    color: white;
+}
+
+
+/* humburger */
+
+div.css-1xtoq5p.e1fqkh3o3 {
+    visibility: hidden;
+}
+
 
 /* BACKGROUND */
+
+div.css-1v0mbdj.etr89bj1 {
+    position: relative;
+    left: -10px;
+    top: 90px;
+    width: 400;
+    display: block;
+}
 
 
 /* SIDEBAR */
 
-div.css-zbg2rx.e1fqkh3o1 {
+div.css-1ope8sv.e1fqkh3o4 {
+    color: white;
     background-color: #023334;
-    color: black
+}
+
+div.div.css-163ttbj.e1fqkh3o11 {
+    color: white;
+    background-color: #023334;
+}
+
+div.css-1v0mbdj.etr89bj1 {
+    top: -80px;
+}
+
+div.css-183lzff.eyqtai90 {
+    position: relative;
+    left: -60px;
+    top: -48px;
+    width: 200;
 }
 
 div.st-by.st-cc.st-cd.st-ae.st-af.st-ag.st-ah.st-ai.st-aj {
@@ -31,25 +67,19 @@ div.st-by.st-cc.st-cd.st-ae.st-af.st-ag.st-ah.st-ai.st-aj {
     list-style: none;
 }
 
-div.css-1v3fvcr.egzxvld1 {
-    background-image: url("images/background.png");
-}
-
-div.st-bz.st-cd.st-ce.st-ae.st-af.st-ag.st-ah.st-ai.st-aj {
-    font-family: Helvetica, Arial, sans-serif;
-    list-style: none;
-}
-
-#div.css-ocqkz7.e1tzin5v0 {
-    background-color: #023334;
-    color: black
-}
-
-div.css-1kyxreq.etr89bj0 {
+div.stSlider {
     position: relative;
-    /* Declared position allows for location changes */
-    top: -50px;
-    /* Moves the image 2px closer to the top of the page */
+    left: 5px;
+    top: -78px;
+    width: 200;
+}
+
+div.element-container.css-1p1nwyz.e1tzin5v3 {
+    width: 20;
+}
+
+div.stHorizontalBlock {
+    visibility: hidden;
 }
 
 
