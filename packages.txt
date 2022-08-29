@@ -1,2 +1,2 @@
  libtk8.6
-  freeglut3-dev
+freeglut3-dev
