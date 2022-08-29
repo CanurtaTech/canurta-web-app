@@ -1,6 +1,16 @@
 
+hUMBURGER
 div.css-14xtw13.e8zbici0 {
     visibility: hidden;
+}
+/* IMAGE */
+
+div.css-1v0mbdj.etr89bj1 {
+    position: relative;
+    left: -10px;
+    top: 90px;
+    width: 400;
+    display: block;
 }
 
 ###side bar line 41 app.py
