@@ -24,7 +24,6 @@ import plotly.express as px
 import json
 import requests
 
-
 st.set_page_config(
     page_title="App",
     page_icon="👋",
@@ -33,7 +32,6 @@ st.set_page_config(
 )
 with open('src/style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
 
 
 # Data
@@ -50,8 +48,8 @@ def space(num_lines=1):
 with st.sidebar:
     image1 = st.image("images/canurta_logo.png")
     a1, a2 = st.columns(2)
-    a1.image("images/background.png", width=60)
-    a2.text("Name, Age")
+    a1.image("images/profile_1.png", width=60)
+    a2.text("Jim, 24")
     
     choose = option_menu("", ["Home", "Data", "Profile"],
                             

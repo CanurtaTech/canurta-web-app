@@ -2,7 +2,6 @@
 
 div.css-12w0qpk.e1tzin5v2 {
     background-color: #E6E6E6;
-    display: flex;
     flex: 40 40 160px;
     padding: 30px 20px;
     border-radius: 0px;
@@ -10,12 +9,13 @@ div.css-12w0qpk.e1tzin5v2 {
     border-width: thick;
     color: #023334;
     font-family: 'Courier New', Courier, monospace;
-    margin: 2px;
+    margin: 3px;
     cursor: pointer;
     background-clip: border-box;
-    text-align: center;
+    text-align: right;
     vertical-align: middle;
     line-height: 30px;
+    left: -65px;
 }
 
 
@@ -56,7 +56,7 @@ div.css-1v0mbdj.etr89bj1 {
 
 div.css-183lzff.eyqtai90 {
     position: relative;
-    left: -70px;
+    left: -6x 0px;
     top: -5px;
     width: 200;
     color: white;
@@ -148,4 +148,13 @@ div.container-xxl.d-flex.flex-column.flex-shrink-0.p-3 {
 section.main.css-k1vhr4.egzxvld3 {
     color: #D3D5D3;
     background-color: #D3D5D3;
+}
+
+div.css-1n76uvr {
+    width: 904px;
+    position: relative;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    gap: 1rem;
 }
