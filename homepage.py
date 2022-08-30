@@ -72,7 +72,8 @@ if choose == "Home":
     col1, col2 = st.columns( [0.8, 0.2])
     with col1:               # To display the header text using css style
         st.markdown(""" <style> .font {
-        font-size:45px ;font-style:bold; font-family: "wf_282b04cad22942a295c9c48f5 - 400"; color: black; float:left;margin: auto -90px;} 
+        font-size:45px ;font-style:bold; font-family: font-family: "Source Sans Pro", sans-serif;
+    font-weight: 600; color: black; float:left;margin: auto -90px;} 
         </style> """, unsafe_allow_html=True)
         st.markdown('<p class="font">Home</p>', unsafe_allow_html=True)    
       
@@ -135,6 +136,9 @@ elif choose == "Profile":
                 if submission == True:
                     st.success("Successfully submitted!") 
         form()
+        space(1)
+        space(1)
+        space(1)
         col1, col2, col3 = st.columns(3) #putting an image in centre
         col2.image("images/profile_page_pic2.png") 
     
@@ -155,7 +159,9 @@ elif choose == "Profile":
             """, 
             unsafe_allow_html=True
             )
-
+        space(1)
+        space(1)
+        space(1)
         col1, col2, col3 = st.columns(3) #putting an image in centre
         col2.image("images/profile_page_pic3.png")
     if selected == "Subsctiption Details":
@@ -165,6 +171,9 @@ elif choose == "Profile":
             unsafe_allow_html=True
             )
         col1, col2, col3 = st.columns(3) #putting an image in centre
+        space(1)
+        space(1)    
+        space(1)
         space(1)
         space(1)
         space(1)
