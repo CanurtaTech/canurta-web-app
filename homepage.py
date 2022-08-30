@@ -111,7 +111,7 @@ elif choose == "Profile":
     st.markdown('<p class="font">My Profile</p>', unsafe_allow_html=True)
     selected = option_menu(
         menu_title=None,
-        options=["Personal Info", "Share Results", "Subsctiption Details"],
+        options=["Personal Info", "Share Results", "Subsctiption"],
         icons=["book","share","file-earmark-medical"],
         orientation="horizontal",
         styles={
@@ -160,22 +160,26 @@ elif choose == "Profile":
         space(1)
         space(1)
         space(1)
-        col1, col2, col3 = st.columns(3) #putting an image in centre
+        col1, col2, col3 = st.columns((15,10,5)) #putting an image in centre
         col2.image("images/profile_page_pic3.png")
-    if selected == "Subsctiption Details":
-        st.markdown(
-            """<a style='display: block; text-align: center;' href="https://www.canurta.com/">Subscription Details</a>
+    if selected == "Subsctiption":
+        col1, col2, col3 = st.columns(3) #putting an image in centre
+        with col1:
+         st.markdown(
+            """<a style='display: block; padding: 30px 20px; position:relative;
+    border-radius: 0px;
+    border: solid;
+    border-width: thick;
+    color: #023334;
+    text-align: center;
+    left: 200px;' href="https://www.canurta.com/">Subscription Details</a>
             """, 
             unsafe_allow_html=True
             )
-        col1, col2, col3 = st.columns(3) #putting an image in centre
-        space(1)
-        space(1)    
-        space(1)
-        space(1)
-        space(1)
-        space(1)
-        col2.image("images/canurta.png")
+        with col2:
+            st.write("")
+        with col3:
+         st.write("")
 
 elif choose == "Data":
     st.markdown(""" <style> .font {
