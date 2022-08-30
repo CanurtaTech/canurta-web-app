@@ -83,7 +83,6 @@ if choose == "Home":
     space(1)
     space(1)
   
-  
     
     a1, a2, a3, a4= st.columns(4)
     a1.metric("Dose Recomendation: ", "\n2 pills")
@@ -91,9 +90,15 @@ if choose == "Home":
     a3.metric("Avg Pain\nScore", "32 mpg", "+2%")
     a4.metric("Avg mood score", "11 mpg", "-7%")
     space(1)
+    space(1)
+    space(1)
+    space(1)
+    space(1)
+    st.image("images/graph.png")
     st.subheader("Product Recomendations")
     space(1)
     space(1)
+
     b1, b2= st.columns(2)
     with b1:
        st.image("images/canurta1.png")
