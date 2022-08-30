@@ -2,26 +2,30 @@
 
 div.css-12w0qpk.e1tzin5v2 {
     background-color: #E6E6E6;
-    padding: 3% 3% 3% 3%;
+    display: flex;
+    flex: 40 40 160px;
+    padding: 30px 20px;
     border-radius: 0px;
     border: solid;
     border-width: thick;
     color: #023334;
     font-family: 'Courier New', Courier, monospace;
-    margin: auto;
+    margin: 2px;
     cursor: pointer;
     background-clip: border-box;
-}
-
-#div.css-1p1nwyz.e1tzin5v3 {
-    top: -10px;
-    color: white;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
 }
 
 
 /* humburger */
 
 div.css-1xtoq5p.e1fqkh3o3 {
+    visibility: hidden;
+}
+
+div.css-14xtw13.e8zbici0 {
     visibility: hidden;
 }
 
@@ -44,20 +48,21 @@ div.css-1ope8sv.e1fqkh3o4 {
     background-color: #023334;
 }
 
-div.div.css-163ttbj.e1fqkh3o11 {
-    color: white;
-    background-color: #023334;
-}
-
 div.css-1v0mbdj.etr89bj1 {
-    top: -80px;
+    top: -50px;
+    left: -10px;
 }
 
 div.css-183lzff.eyqtai90 {
     position: relative;
-    left: -60px;
-    top: -48px;
+    left: -70px;
+    top: -5px;
     width: 200;
+    color: white;
+    font-family: wf_282b04cad22942a295c9c48f5 - 400;
+    min-height: 30px;
+    min-width: 150px;
+    font-size: 16px;
 }
 
 div.st-by.st-cc.st-cd.st-ae.st-af.st-ag.st-ah.st-ai.st-aj {
@@ -70,16 +75,40 @@ div.st-by.st-cc.st-cd.st-ae.st-af.st-ag.st-ah.st-ai.st-aj {
 div.stSlider {
     position: relative;
     left: 5px;
-    top: -78px;
+    top: -20px;
     width: 200;
+    color: white;
+    font-family: wf_282b04cad22942a295c9c48f5 - 400;
 }
 
 div.element-container.css-1p1nwyz.e1tzin5v3 {
     width: 20;
 }
 
-div.stHorizontalBlock {
-    visibility: hidden;
+div.css-1pd56a0.e1tzin5v0 {
+    width: 50;
+}
+
+a.nav-link.active {
+    padding: 15px 40px;
+    min-height: 50px;
+    min-width: 150px;
+    font-size: 16px;
+    border-radius: 0px;
+    border: 5px rgb(5, 71, 71);
+    text-align: left;
+    margin: -20px;
+    --hover-color: #eee;
+    color: white;
+    background-color: rgb(2, 41, 42);
+}
+
+
+/* Images */
+
+div.css-ocqkz7.e1tzin5v4 {
+    width: 500;
+    color: #023334;
 }
 
 
@@ -88,4 +117,27 @@ div.stHorizontalBlock {
 .fullScreenFrame>div {
     display: flex;
     justify-content: center;
+}
+
+header.css-18ni7ap.e8zbici2 {
+    height: 1.875rem;
+}
+
+label.css-15tx938.effi0qh3 {
+    color: #E6E6E6;
+    font-family: wf_282b04cad22942a295c9c48f5 - 400;
+    font-size: 16px;
+}
+
+div.container-xxl.d-flex.flex-column.flex-shrink-0.p-3 {
+    position: relative;
+    top: -30px;
+    height: 340px;
+    width: 100px;
+    min-width: 300px;
+    background-color: rgb(2, 51, 52);
+    border-radius: 10px;
+    border: 5px;
+    border-color: "#054747";
+    margin: auto;
 }

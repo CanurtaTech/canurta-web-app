@@ -25,11 +25,11 @@ import json
 import requests
 
 
-
 st.set_page_config(
     page_title="App",
     page_icon="👋",
-    layout="centered"
+    layout="centered",
+    initial_sidebar_state="auto"
 )
 with open('src/style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
@@ -50,27 +50,29 @@ def space(num_lines=1):
 with st.sidebar:
     image1 = st.image("images/canurta_logo.png")
     a1, a2 = st.columns(2)
-    a1.image("images/background.png", width=50)
+    a1.image("images/background.png", width=60)
     a2.text("Name, Age")
-    mood = st.slider('Daily Pain Tracker', 0, 10, 7)
-    pain = st.slider('Daliy Mood Tracker', 0, 10, 2)
+    
     choose = option_menu("", ["Home", "Data", "Profile"],
                             
                          styles={
-        "container": {"padding": "5!important","position":"relative","top":"50%","height":"400px","width": "400","min-width":"600px", "background-color": "#023334","border-radius":"0px", "width": "700px","margin": "auto"},
+        "container": {"default_index":"0","padding": "5!important","position":"relative","top":"50%","height":"200px","width": "320","min-width":"320px", "background-color": "#023334","border-radius":"0px", "width": "320px","margin": "auto"},
         "icon": {"visibility":"hidden"},
-        "nav-link": {"padding":"12px 0px;", "min-height":"30px", "min-width": "150px","font-size": "20px","font-size": "16px","border-radius":"0px","border":"5px","border-color":"#054747", "text-align": "left", "margin":"0px", "--hover-color": "#eee", "color":"white","font-family":"wf_282b04cad22942a295c9c48f5 - 400"},
+        "nav-link active": {"padding":"15px 40px;", "min-height":"50px", "min-width": "150px","font-size": "16px","border-radius":"0px","border":"5px","border-color":"#054747", "text-align": "left", "margin":"-20px", "--hover-color": "#eee", "color":"white","font-family":"wf_282b04cad22942a295c9c48f5 - 400"},
+        "nav-link": {"padding":"18px 40px;", "min-height":"50px", "min-width": "150px","font-size": "16px","border-radius":"0px","border":"5px","border-color":"#054747", "text-align": "left", "margin":"-0px", "--hover-color": "#eee", "color":"white","font-family":"wf_282b04cad22942a295c9c48f5 - 400"},
         "nav-link-selected": {"background-color": "#02292A","color":"ffffff"},
     }
     )
-     
+    mood = st.sidebar.slider('Daily Pain Tracker', 0, 10, 7)
+    pain = st.sidebar.slider('Daliy Mood Tracker', 0, 10, 2)
+
 
 if choose == "Home":
  
     col1, col2 = st.columns( [0.8, 0.2])
     with col1:               # To display the header text using css style
         st.markdown(""" <style> .font {
-        font-size:45px ;font-style:bold; font-family: 'wf_282b04cad22942a295c9c48f5 - 400'; color: black; float:left;margin: auto -90px;} 
+        font-size:45px ;font-style:bold; font-family: "wf_282b04cad22942a295c9c48f5 - 400"; color: black; float:left;margin: auto -90px;} 
         </style> """, unsafe_allow_html=True)
         st.markdown('<p class="font">Home</p>', unsafe_allow_html=True)    
       
@@ -85,10 +87,10 @@ if choose == "Home":
   
     
     a1, a2, a3, a4= st.columns(4)
-    a1.metric("Dose Recomendation: ", "2 pills")
-    a2.metric("Avg Inflammation \n Score","20%")
-    a3.metric("Avg Pain Score", "8%")
-    a4.metric("Avg mood score", "11%")
+    a1.metric("Dose Recomendation: ", "\n2 pills")
+    a2.metric("Avg Inflammation\nScore","9 mpg", "-8%")
+    a3.metric("Avg Pain\nScore", "32 mpg", "+2%")
+    a4.metric("Avg mood score", "11 mpg", "-7%")
     space(1)
     st.subheader("Product Recomendations")
     space(1)
@@ -107,10 +109,21 @@ elif choose == "Profile":
     st.markdown(""" <style> .font {
     font-size:45px ; font-family: 'wf_282b04cad22942a295c9c48f5 - 400'; color: black; float:left;margin: auto -90px;} 
     </style> """, unsafe_allow_html=True)
-    st.markdown('<p class="font">Your Profile</p>', unsafe_allow_html=True)
-    personal_info = st.container()
-    share_results = st.container()
-    with personal_info:
+    st.markdown('<p class="font">My Profile</p>', unsafe_allow_html=True)
+    selected = option_menu(
+        menu_title=None,
+        options=["Personal Info", "Share Results", "Subsctiption Details"],
+        icons=["book","share","file-earmark-medical"],
+        orientation="horizontal",
+        styles={
+            "container": {"padding": "0!important", "background-color": "#fafafa"},
+            "icon": {"color": "black", "font-size": "20px"}, 
+            "nav-link": {"font-size": "18px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+            "nav-link-selected": {"background-color": "green"},
+        }
+    )
+
+    if selected == "Personal Info":
         st.subheader("Personal Info")
         def form():
             with st.form(key="Information Form"):
@@ -122,10 +135,13 @@ elif choose == "Profile":
                 if submission == True:
                     st.success("Successfully submitted!") 
         form()
+        col1, col2, col3 = st.columns(3) #putting an image in centre
+        col2.image("images/profile_page_pic2.png") 
+    
 
-    with share_results: 
+    if selected == "Share Results": 
         st.subheader("My Physician")
-        #st.button("Send Report to My Doctor")
+        
         def physician_form():
             with st.form(key="Physician Form"):
                 doctor_name = st.text_input("Doctor's Name: ")
@@ -134,8 +150,25 @@ elif choose == "Profile":
                 if submission == True:
                    st.success("Successfully submitted!") 
         physician_form()
-        #st.write("[Connect with my doctor >](https://mail.yahoo.com/)")
-        st.write("[Connect to Fullscript >](https://fullscript.com/)")
+        st.markdown(
+            """<a style='display: block; text-align: center;' href="https://fullscript.com/">Connect to Fullscript</a>
+            """, 
+            unsafe_allow_html=True
+            )
+
+        col1, col2, col3 = st.columns(3) #putting an image in centre
+        col2.image("images/profile_page_pic3.png")
+    if selected == "Subsctiption Details":
+        st.markdown(
+            """<a style='display: block; text-align: center;' href="https://www.canurta.com/">Subscription Details</a>
+            """, 
+            unsafe_allow_html=True
+            )
+        col1, col2, col3 = st.columns(3) #putting an image in centre
+        space(1)
+        space(1)
+        space(1)
+        col2.image("images/canurta.png")
 
 elif choose == "Data":
     st.markdown(""" <style> .font {
