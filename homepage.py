@@ -61,6 +61,8 @@ with st.sidebar:
         "nav-link-selected": {"background-color": "#02292A","color":"ffffff"},
     }
     )
+    space(1)
+    
     mood = st.sidebar.slider('Daily Pain Tracker', 0, 10, 7)
     pain = st.sidebar.slider('Daliy Mood Tracker', 0, 10, 2)
 
@@ -116,7 +118,7 @@ elif choose == "Profile":
     st.markdown('<p class="font">My Profile</p>', unsafe_allow_html=True)
     selected = option_menu(
         menu_title=None,
-        options=["Personal Info", "Share Results", "Subsctiption"],
+        options=["Personal Info", "Share Results", "Subscription"],
         icons=["book","share","file-earmark-medical"],
         orientation="horizontal",
         styles={
@@ -165,9 +167,8 @@ elif choose == "Profile":
         space(1)
         space(1)
         space(1)
-        col1, col2, col3 = st.columns((15,10,5)) #putting an image in centre
-        col2.image("images/profile_page_pic3.png")
-    if selected == "Subsctiption":
+       
+    if selected == "Subscription":
         col1, col2, col3 = st.columns(3) #putting an image in centre
         with col1:
          st.markdown(
